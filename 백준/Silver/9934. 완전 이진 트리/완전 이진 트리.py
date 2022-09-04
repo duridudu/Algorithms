@@ -1,3 +1,4 @@
+
 def binary(b, depth):
     if len(b)==1:
         tree[depth].extend(b)
