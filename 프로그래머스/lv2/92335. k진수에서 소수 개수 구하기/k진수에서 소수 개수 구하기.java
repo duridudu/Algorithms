@@ -9,6 +9,7 @@ class Solution {
         int temp = n;
         int b = 0;
         // 지수 변환을 위해 나머지가 몫보다 작아질때까지 나누며 ArrayList에 저장 
+        // 그러나 Integer.toString(n, k).split("0"); 쓰면 바로 지수변환해줌 ㅡㅡ
         while(a>=k){
             //몫
             a=temp/k;
@@ -43,7 +44,7 @@ class Solution {
         return answer;
     }
     
-    // 소수 판별 함수
+    // 소수 판별 함수 - Long으로 받아야함.
     public boolean isPrime(long n) {
         if (n==1){
             return false;
