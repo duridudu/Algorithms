@@ -8,6 +8,7 @@ class Solution {
         int a = n;
         int temp = n;
         int b = 0;
+        // 지수 변환을 위해 나머지가 몫보다 작아질때까지 나누며 ArrayList에 저장 
         while(a>=k){
             //몫
             a=temp/k;
@@ -17,29 +18,32 @@ class Solution {
             temp=temp/k;
         }
         cNum.add(temp);
+        
+        // 지수변환된 값을 뒤에서부터 문자열로 형변환 
         String str = "";
         for (int i=cNum.size()-1; i>=0; i--){
             int tmp = cNum.get(i);
             str+= String.valueOf(tmp);
         }
         
+        // 0으로 split하여 조건에 맞게 변환
         String [] strArr = str.split("0");
-        // System.out.println(Arrays.toString(strArr));
+        // 조건에 맞는 소수 개수 셀 변수 
         int cnt=0;
+        
+        // 0으로 split된 배열 돌며 소수 체크
         for (int i=0; i<strArr.length;i++){
-            // System.out.println(strArr[i]);
             String temps = strArr[i];
-            
+            // 빈 문자열이 아니고 소수가 맞다면 카운트 +1
             if (!(temps.equals("")) && (isPrime(Long.parseLong(temps)))){
                 cnt++;
-                // System.out.println(isPrime(Integer.parseInt(temps)));
             }
         }
-        
         answer = cnt;
         return answer;
     }
     
+    // 소수 판별 함수
     public boolean isPrime(long n) {
         if (n==1){
             return false;
