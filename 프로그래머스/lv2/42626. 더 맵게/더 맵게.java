@@ -24,9 +24,8 @@ class Solution {
                 answer+=1;
             }
             
-            // System.out.println(pq.size());
         }
-        
+        // pq.peek() < K 이 경우를 고려 못해서 16번만 오류났었음!!!!!!
         if (pq.size() == 1 && pq.peek() < K){
             answer=-1;
         }
