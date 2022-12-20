@@ -1,15 +1,17 @@
-# 정답 코드
-n = int(input())
-tree = list(map(int, input().split()))
-grow = list(map(int, input().split()))
-
-array = []
+n=int(input())
+height=list(map(int, input().split()))
+speed=list(map(int, input().split()))
+#trees={}
+trees=[]
 for i in range(n):
-    array.append((tree[i], grow[i]))
-
-array.sort(key=lambda x : x[1]) # 나무가 자라는 순서로 정렬
-answer = 0
+    trees.append((height[i], speed[i]))
+    # trees[speed[i]]=height[i]
+# trees=dict(sorted(trees.items()))
+trees.sort(key=lambda x:x[1])
+result=0
+# k=0
 for i in range(n):
-    answer += array[i][0] + array[i][1] * i # 나무의 길이 + 나무가 자라는 속도 * 자르는 순서
-
-print(answer)
+    # result+=(trees[tree]+k*tree)
+    result+= trees[i][0]+trees[i][1]*i
+    # k+=1
+print(result)
