@@ -23,3 +23,18 @@ def solution(s):
         answer=False
     
     return answer
+
+## 인상깊은 풀이... 이면서 따라해볼 수 있는 수준의,,,,
+# def solution(s):
+#     tmp = []
+#     for i in s:
+#         if len(tmp) == 0:
+#             tmp.append(i)  
+#         else:
+#             if tmp[-1] + i == '()':
+#                 tmp.pop()
+#                 pass
+#             else:
+#                 tmp.append(i)
+
+#     return len(tmp)==0
