@@ -9,20 +9,5 @@ def solution(want, number, discount):
         mart = Counter(discount[i:i+10])
         if mart==temp:
             answer+=1
-        # print(discount[i:i+10])
-        # print(mart)
-        #test=0
-        #for m in mart:
-            # print("=============",m)
-            # print(m)
-            #if (m not in want) or (mart[m]!=temp[m]):
-               # test=1
-               # break
-            # test=0
-            
-        #if test==0:
-            # print("프프ㅡ프ㅡㅡ리릴리ㅣㅣㅣ더더더더ㅓㅓ덤",i)
-           # answer+=1
-        
             
     return answer
