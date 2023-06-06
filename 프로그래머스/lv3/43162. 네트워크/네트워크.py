@@ -1,11 +1,9 @@
 def dfs(computers, visited, i):
-    # global answer
     for j in range(len(computers[i])):
         if i!=j and computers[i][j]==1 and visited[j-1]!=True:
             visited[i-1]=True
             visited[j-1]=True
             dfs(computers, visited, j)
-    
 
 def solution(n, computers):
     answer=0
