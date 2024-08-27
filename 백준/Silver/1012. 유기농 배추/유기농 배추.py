@@ -1,3 +1,4 @@
+## 백준 익스텐션 미작동~,, 직접 업로드
 import sys
 input = sys.stdin.readline  # 빠른 입력을 위해 sys.stdin.readline 사용
 
