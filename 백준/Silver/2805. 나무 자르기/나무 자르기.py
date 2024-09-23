@@ -4,16 +4,13 @@ input = sys.stdin.readline
 def binary(trees):
   h=0
   start = 1
-  end = max(trees)
+  end = trees[-1]
   while(start<=end):
     h = (start+end)//2
     temp = 0
-    t = []
-    for tt in trees:
-      if tt > h :
-        t.append(tt-h)
-    #print(temp, M)
-    temp = sum(t)
+    for t in trees:
+      if t > h :
+        temp += (t-h)
     if temp >= M :
       ## h를 높여야 한다.
       start = h+1
@@ -22,6 +19,6 @@ def binary(trees):
   return end
 
 N,M = map(int, input().split())
-trees = list(map(int, input().split()))
+trees = sorted(list(map(int, input().split())))
 h = binary(trees)
 print(h)
