@@ -1,23 +1,27 @@
 import sys
-#sys.stdin = open('input.txt')
+input = sys.stdin.readline
 
-n,m =map(int,sys.stdin.readline().split())
-lis = list(map(int, sys.stdin.readline().split()))
-
-le=1
-ri=max(lis)
-
-while le<=ri:
-    mid = (le+ri)//2
-    total= [tree-mid if tree>mid else 0 for tree in lis]
-    # print(total)
-    total_val = sum(total)
-    # for tree in lis:
-    #     if tree>mid:
-    #         total+=(tree-mid)
-    if total_val>=m:
-        le=mid+1
+def binary(trees):
+  h=0
+  start = 1
+  end = max(trees)
+  while(start<=end):
+    h = (start+end)//2
+    temp = 0
+    t = []
+    for tt in trees:
+      if tt > h :
+        t.append(tt-h)
+    #print(temp, M)
+    temp = sum(t)
+    if temp >= M :
+      ## h를 높여야 한다.
+      start = h+1
     else:
-        ri=mid-1
+      end = h-1
+  return end
 
-print(ri)
+N,M = map(int, input().split())
+trees = list(map(int, input().split()))
+h = binary(trees)
+print(h)
